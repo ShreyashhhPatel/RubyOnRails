@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to "Home", root_path %> |
+      <%= link_to "Login", new_session_path unless authenticated? %>
+      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+    </nav>
+        <div class="notice"><%= notice %></div>
+
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

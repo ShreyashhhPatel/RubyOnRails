@@ -1,0 +1,59 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '3.2.3'
+
+# Rails framework
+gem "rails", "~> 8.0.0"
+
+# Database
+gem "sqlite3", "~> 2.1"
+
+# Authentication (required by has_secure_password)
+gem "bcrypt", "~> 3.1.7"
+
+# App server
+gem "puma", "~> 6.0"
+
+# CSS (Rails 8 works with cssbundling-rails or sassc-rails)
+gem "sassc-rails"
+
+# JavaScript bundling (importmap/jsbundling for assets)
+gem "jsbundling-rails"
+gem "importmap-rails", "~> 2.2"
+
+# Hotwire (Turbo + Stimulus)
+gem "turbo-rails"
+
+# JSON APIs
+gem "jbuilder", "~> 2.7"
+
+# Bootsnap: speeds up boot time
+gem "bootsnap", ">= 1.4.4", require: false
+
+group :development, :test do
+  # Debugging
+  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+end
+
+group :development do
+  # Interactive console in browser
+  gem "web-console", ">= 4.1.0"
+
+  # File watcher
+  gem "listen", "~> 3.3"
+
+  # Speeds up dev by keeping app preloaded
+  gem "spring"
+end
+
+group :test do
+  # System tests
+  gem "capybara", ">= 3.26"
+  gem "selenium-webdriver", ">= 4.0.0.rc1"
+end
+
+# Windows-specific zoneinfo
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "image_processing", "~> 1.14"
