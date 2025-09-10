@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Books" %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+  <body>
+    <div id="root"></div>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= yield %>
+  </body>
+</html>
